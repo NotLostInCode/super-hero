@@ -1,17 +1,55 @@
-'use strict';
-
-let path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  entry: './js/script.js',
+  // Точка входа, главный файл приложения
+  entry: './src/index.js',
+
+  // Настройки вывода, куда будут собираться файлы
   output: {
-    filename: 'bundle.js',
-    path: __dirname + '/js'
+    // Путь к выходной папке
+    path: path.resolve(__dirname, 'dist'),
+    // Название выходного файла
+    filename: 'bundle.js'
   },
-  watch: true,
 
-  devtool: "source-map",
+  // Настройки загрузчиков для обработки различных типов файлов
+  module: {
+    rules: [
+      {
+        // Загрузчик для JavaScript файлов
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        // Загрузчик для CSS файлов
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        // Загрузчик для изображений
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
+      },
+      {
+        // Загрузчик для шрифтов
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource'
+      }
+    ]
+  },
 
-  module: {}
+  // Настройки плагинов
+  plugins: [
+    // Плагин для создания HTML файла
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ]
 };
