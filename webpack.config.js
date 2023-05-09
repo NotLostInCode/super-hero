@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+
 module.exports = {
   // Точка входа, главный файл приложения
   entry: './src/index.js',
@@ -49,7 +50,9 @@ module.exports = {
   plugins: [
     // Плагин для создания HTML файла
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      title: 'My App',
+      template: './src/index.html',
+      favicon: 'src/assets/favicon/favicon.png'
     })
   ]
 };
