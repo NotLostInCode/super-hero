@@ -7,14 +7,65 @@
     <title>Super-hero</title>
   </head>
   <body>
-    <header data-component="header">
-      <p>Header</p>
-    </header>
+    <div class="wrapper">
+      <header class="header" data-component="header">
+        <div class="container">
+          <div class="container__header">
+            <a class="header-link__logo" href="#">
+              <img
+                class="logo"
+                src="<%= require('./assets/icons/logo.png') %>"
+                alt="Superhero logo"
+              />
+            </a>
 
-    <footer data-component="footer">
-      <p>Footer</p>
-    </footer>
+            <ul class="header__navigation">
+              <li class="navigation__item">
+                <a class="item__link" href="#">Главная</a>
+              </li>
+              <li class="navigation__item">
+                <a class="item__link" href="#">Marvel Comics</a>
+              </li>
+              <li class="navigation__item">
+                <a class="item__link" href="#">DC Comics</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
 
+      <main class="main" data-component="main">
+        <div class="container">
+          <div class="container__main">
+            <p class="main__text main-modified">
+              Добро пожаловать на сайт с комиксами супергероев! Здесь вы можете
+              найти самые популярные и интересные комиксы о вашем любимом
+              персонаже. Ознакомьтесь с информацией о каждом комиксе, такой как
+              дата выпуска, авторы, герои и их способности, а также прочтите
+              краткое описание сюжета. Наслаждайтесь чтением комиксов и
+              погружайтесь в захватывающий мир супергероев!"
+            </p>
+
+            <div class="main__pictures main-modified">
+              <img
+                class="main__images"
+                src="<%= require('./assets/images/Marvel vs DC.jpg') %>"
+                alt="Marvel vs DC"
+              />
+            </div>
+          </div>
+
+          <div class="list__container">
+            <div class="list__title">Список</div>
+            <ul class="list"></ul>
+          </div>
+        </div>
+      </main>
+
+      <footer data-component="footer">
+        <p>Footer</p>
+      </footer>
+    </div>
     <script type="module" src="/dist/bundle.js"></script>
   </body>
 </html>

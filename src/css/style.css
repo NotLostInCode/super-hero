@@ -1,3 +1,24 @@
-div {
-    color:  red;
+body {
+  background-color: #333;
+  color: #fff;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Прижатие footer к низу страницы */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: auto;
 }

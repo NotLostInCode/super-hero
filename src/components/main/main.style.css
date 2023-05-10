@@ -1,0 +1,23 @@
+.container__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 20px 0;
+}
+.main-modified {
+  flex: 0 0 40%;
+}
+.main__text {
+  line-height: 1.5;
+  font-size: 20px;
+}
+.main__pictures {
+}
+.main__images {
+  border-radius: 5px;
+}
+.list__title {
+  text-align: center;
+  font-size: 40px;
+}

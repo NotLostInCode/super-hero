@@ -1,0 +1,25 @@
+.header {
+  border-bottom: 1px solid #fff;
+}
+.container__header {
+
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+.header-link__logo {
+}
+.logo {
+  width: 300px;
+}
+.header__navigation {
+  display: flex;
+  gap: 20px;
+}
+.navigation__item {
+}
+.item__link {
+  color: #fff;
+}
