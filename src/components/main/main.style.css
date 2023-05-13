@@ -21,3 +21,13 @@
   text-align: center;
   font-size: 40px;
 }
+
+
+/* Стили слайдера */
+.swiper {
+  width: 600px;
+  height: 100%;
+}
+.list-swiper__wrapper {
+  text-align: center;
+}
