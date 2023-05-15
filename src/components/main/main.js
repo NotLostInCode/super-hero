@@ -1,11 +1,9 @@
 import { fetchData } from "../../api";
 
 // core version + navigation, pagination modules:
-import Swiper, { Navigation, Pagination } from "swiper";
-// import Swiper and modules styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import Swiper from 'swiper/bundle';
+// import styles bundle
+import 'swiper/css/bundle';
 
 export default function mainScript(main) {
   fetchData()
@@ -18,6 +16,7 @@ export default function mainScript(main) {
         swiperSlide.classList.add("swiper-slide");
         const swiperImage = document.createElement("img");
         swiperImage.src = imageUrls;
+
         swiperWrapper.appendChild(swiperSlide);
         swiperSlide.appendChild(swiperImage);
       }
@@ -32,25 +31,24 @@ export default function mainScript(main) {
   // init Swiper:
   const swiper = new Swiper(".swiper", {
     // configure Swiper to use modules
-    modules: [Navigation, Pagination],
-    // Optional parameters
-
-    // If we need pagination
-    pagination: {
-      // el: ".swiper-pagination",
-      // clickable: true,
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "3",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
     },
-
-    // Navigation arrows
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    // },
   });
 }
 

@@ -52,6 +52,12 @@ module.exports = {
       title: 'My App',
       template: './src/index.html',
       favicon: 'src/assets/favicon/favicon.png'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'pages/myPages/myPage.html',
+      template: './pages/myPages/myPage.html',
+      chunks: [],
+      favicon: 'src/assets/favicon/favicon.png'
     })
   ]
 };
