@@ -56,8 +56,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'pages/myPages/myPage.html',
       template: './pages/myPages/myPage.html',
-      chunks: [],
-      favicon: 'src/assets/favicon/favicon.png'
+      favicon: 'src/assets/favicon/favicon.png',
+      excludeChunks: ['index'] // исключаем чанк с именем 'index'
     })
-  ]
+  ],
+
 };

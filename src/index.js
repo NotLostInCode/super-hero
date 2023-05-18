@@ -10,17 +10,20 @@ import reset from './css/reset.css'
 import './components/header/header.style.css';
 import './components/footer/footer.style.css';
 import './components/main/main.style.css'
-
+import '../pages/myPages/myPage.style.css'
 
 // импортируем функции скриптов для header и footer
 import headerScript from './components/header/header';
 import footerScript from './components/footer/footer';
 import mainScript from './components/main/main'
+import pageScript from '../pages/myPages/myPage'
 
 // находим элементы header и footer по атрибуту data-component
 const header = document.querySelector('[data-component="header"]');
 const footer = document.querySelector('[data-component="footer"]');
 const main = document.querySelector('[data-component="main"]');
+const page = document.querySelector('[data-component="page"]');
+
 
 // если элемент header существует, вызываем функцию headerScript с элементом header в качестве аргумента
 if (header) {
@@ -34,4 +37,8 @@ if (footer) {
 
 if (main) {
   mainScript(main)
+}
+
+if (page) {
+  pageScript(page)
 }

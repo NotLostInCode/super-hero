@@ -28,6 +28,8 @@ export default function mainScript(main) {
 
 
 
+
+
   // init Swiper:
   const swiper = new Swiper(".swiper", {
     // configure Swiper to use modules
