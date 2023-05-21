@@ -12,14 +12,33 @@
           <p>This is my page content.</p>
 
 
+            <!-- search container -->
+          <div class="search-container">
+            <div class="search-element">
+              <h3 class="search-title">Search Heroes: </h3>
+              <input type="text" class="search-heroes" placeholder="Введите имя героя ...">
 
-          <form class="form">
-            <input type="search" class="form__search">
-            <button class="form__btn">Submit</button>
-          </form>
-          <div class="bla"></div>
+              <div class="search-list">
+                <!-- Список героев -->
+                <div class="search-list-item">
+                  <div class="search-item-thumbnail">
+                    <img src="<%= require('/src/assets/images/search-heroes.jpg') %>" alt="">
+                  </div>
+                  <div class="search-item-info">
+                    <h3>Batman</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- end search container -->
+
+
+
+
+
       </div>
     </div>
-    <!-- Добавьте другие элементы HTML -->
+
   </body>
 </html>
