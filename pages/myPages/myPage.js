@@ -1,101 +1,51 @@
 export default function pageScript(page) {
-  // const input = document.querySelector(".form__search");
-  // const buttonEl = document.querySelector(".form__btn");
-  // const form = document.querySelector(".form");
-  // const container = document.querySelector(".bla");
 
-  // form.addEventListener("submit", (e) => {
-  //   e.preventDefault();
+    const searchHeroesInput = document.querySelector('.search-heroes')
+    const searchList = document.querySelector('.search-list')
+    const searchListItem = document.querySelector('search-list-item')
 
-  //   const inputValue = input.value;
-
-  //   const searchUrl = `https://www.superheroapi.com/api.php/553827756740754/search/${inputValue}`;
-
-  //   return fetch(searchUrl)
-  //     .then((response) => response.json())
-  //     .then((data) => {
+      async function loadHeroes(searchHeroes) {
+      const URL = `https://www.superheroapi.com/api.php/553827756740754/search/${searchHeroes}`
+      const response = await fetch(URL)
+      const data = await response.json()
+      if (data.response == 'success') displayHeroesList(data.results)
+      console.log(data)
+    }
 
 
-  //       function renderHeroes() {
-  //         const div = document.createElement("div");
-  //         const img = document.createElement("img");
-  //         const result = data.results[0].image.url;
-  //         img.src = result;
-  //         container.appendChild(div);
-  //         div.appendChild(img);
-  //       }
-  //       renderHeroes();
+    // Ищем героя
+    function findHeroes() {
+      let searchHeroes = (searchHeroesInput.value).trim()
+      if (searchHeroes.length > 0) {
+        searchList.classList.remove('hide-search-list')
+        loadHeroes(searchHeroes)
+      } else {
+        searchList.classList.add('hide-search-list')
+      }
+    }
 
-  //       // console.log(data.results[1])
-  //     })
-  //     .catch((error) =>
-  //       console.log("Ошибка при получение API в myPage.js", error)
-  //     );
-  // });
-
-
-
-   // Динамический поиск
+    // Показываем список героев
+    function displayHeroesList(heroes) {
+      searchList.innerHTML = ''
+     for (let i = 0; i < heroes.length; i++) {
+      let heroesListItem = document.createElement('div')
+      heroesListItem.classList.add('search-list-item')
 
 
+      heroesListItem.innerHTML = `
+      <div class="search-item-thumbnail">
+        <img src="${heroes[i].image.url}" alt="">
+      </div>
+      <div class="search-item-info">
+        <h3>${heroes[i].name}</h3>
+      </div>
+      `
+      searchList.appendChild(heroesListItem)
+     }
 
+    }
 
-
-
-    // const formHero = document.querySelector('.form-display__hero')
-    // const searchInput = document.querySelector('.search')
-    // const searchListHero = document.querySelector('.list__hero')
-
-    // async function loadHeroes(searchHeroes) {
-    //   const URL = `https://www.superheroapi.com/api.php/553827756740754/search/${searchHeroes}`
-    //   const response = await fetch(URL)
-    //   const data = await response.json()
-    //   console.log(data)
-    // }
-
-    // function findHeroes() {
-    //   let searchHeroes = (searchInput.value).trim()
-    //   loadHeroes(searchHeroes)
-    // }
-
-    // function displayHeroesList(heroes) {
-
-    // }
-
-    //  formHero.addEventListener('submit', (e) => {
-    //   e.preventDefault()
-
-    //   const inputValue = searchInput.value
-    //   const searchUrl = `https://www.superheroapi.com/api.php/553827756740754/search/${inputValue}`;
-
-    //   fetch(searchUrl)
-    //    .then(response => response.json())
-    //    .then((data) => {
-    //     const heroResult = data.results
-    //     heroResult.forEach(superHero => {
-    //       hero.push(superHero)
-    //     })
-    //    })
-    //    console.log(hero)
-
-      //  function getListHero (word, stations) {
-      //   return stations.filter((s) => {
-
-      //     const regex = new RegExp(word, 'gi')
-      //     return s.
-      //   })
-      //  }
-    //  })
-
-
-
-    // function getListHero () {
-
-    // }
-
-    // function displayHero () {
-
-    // }
-
+    searchHeroesInput.addEventListener('keyup', findHeroes)
+    searchHeroesInput.addEventListener('click', findHeroes)
 
 }
