@@ -57,4 +57,24 @@ export default function pageScript(page) {
       searchList.classList.add("hide-search-list");
     }
   });
+
+
+
+  const tabs = document.querySelectorAll(".tab");
+
+  tabs.forEach(tab => {
+    const tabId = tab.dataset.tab;
+    const tabContent = document.querySelector(`[data-tab-content="${tabId}"]`);
+    tabContent.classList.add('hide-detailed-menu')
+
+    tab.addEventListener("click", (e) => {
+
+        if (e.target.closest('.tab') === tab && tabContent.classList.contains('hide-detailed-menu')) {
+          tabContent.classList.remove('hide-detailed-menu')
+
+        }
+
+    });
+  });
+
 }
