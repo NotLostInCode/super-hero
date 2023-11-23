@@ -10,16 +10,16 @@
 		<header class="header">
 			<div class="container">
 				<div class="menu">
-					<div class="header__logo">
-						<img src="" alt="logo" class="logo" />
-					</div>
+					<!-- <div class="header__logo">
+						<img src="./public/images/logo2.png" alt="logo" class="logo" />
+					</div> -->
 					<nav class="menu__nav">
 						<ul class="menu__list">
 							<li class="menu__item">
-								<a href="#" class="menu__link">Главная</a>
+								<a href="/" class="menu__link">Главная</a>
 							</li>
 							<li class="menu__item">
-								<a href="#" class="menu__link">Поиск героев</a>
+								<a href="./public/pages/SearchForHeroes.html" class="menu__link">Поиск героев</a>
 							</li>
 						</ul>
 					</nav>
@@ -27,10 +27,7 @@
 
 				<div class="info">
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-						facilis alias totam doloremque iste consectetur perferendis repellat
-						laborum rem corporis, esse sed pariatur amet, aspernatur dolor,
-						atque aperiam cumque. Ipsam!
+						Узнайте все о ваших любимых супергероях прямо здесь. Просто выберите персонажа, и вы получите его имя, характеристики и невероятные способности. Наслаждайтесь быстрым доступом к информации о героях вселенной Marvel и DC, не отвлекаясь на лишние детали. Просто герои и их силы.
 					</p>
 				</div>
 			</div>
@@ -39,7 +36,7 @@
 		<div class="main">
 			<div class="container">
 				<h1>
-					На этом сайте ты найдешь подробные характеристики персонажей, их
+					На этом сайте ты найдешь подробные характеристики персонажей и их
 					способности!
 				</h1>
 
@@ -49,6 +46,7 @@
 							src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"
 							alt=""
 						/>
+						<p class="character__name">Герой</p>
 					</div>
 
 					<div class="spoiler">
@@ -108,7 +106,26 @@
 			</div>
 		</div>
 
-		<div class="footer"></div>
+		<div class="footer">
+				<h1>Можешь оставить отзыв, либо что хотелось бы увидеть</h1>
+				<form class="footer__form">
+					<div class="footer__data">
+						<div class="form__name">
+						<p>Имя</p>
+						<input type="text" placeholder="Введите имя">
+					</div>
+					<div class="form__email">
+						<p>Почта</p>
+						<input type="email" placeholder="Введите почту">
+					</div>
+					</div>
+					<div class="form__reviews">
+						<p>Отзыв</p>
+						<textarea name="" id=""></textarea>
+					</div>
+					<button>Отправить</button>
+				</form>
+		</div>
 
 		<script type="module" src="/src/js/main.js"></script>
 	</body>

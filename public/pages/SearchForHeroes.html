@@ -1,1 +1,50 @@
-<h2>Поиск героев</h2>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="menu">
+					<nav class="menu__nav">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="/" class="menu__link">Главная</a>
+							</li>
+							<li class="menu__item">
+								<a href="./public/pages/SearchForHeroes.html" class="menu__link"
+									>Поиск героев</a
+								>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div class="container">
+				<div class="search__container">
+					<div class="search__heroes">
+						<div class="search">
+							<input
+								class="search__input"
+								type="text"
+								placeholder="Search Heroes"
+							/>
+						</div>
+					</div>
+					<div class="searching__results">
+                        <img src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg" alt="" class="searching-results__img" >
+                        <p class="searching-results__name">Герой</p>
+                    </div>
+				</div>
+			</div>
+		</main>
+
+		<script type="module" src="../../src/js/main.js"></script>
+	</body>
+</html>

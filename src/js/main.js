@@ -1,5 +1,7 @@
 import '../style/style.css'
 
+
+
 // import md5 from 'js-md5'
 
 // const publicKey = 'dcf493d56816d73d4ae6a5645dcbb219'
@@ -17,16 +19,15 @@ import '../style/style.css'
 // 	})
 // 	.then(data => console.log(data))
 // 	.catch(error => console.error(error))
-
 const spoilerHeaders = document.querySelectorAll('.spoiler__header')
 
 spoilerHeaders.forEach(spoilerHeader => {
-
-	spoilerHeader.addEventListener('click', (e)=> {
-		if (e.target === spoilerHeader) {
-            let spoilerContent = document.querySelector('.spoiler__content')
-			spoilerContent.classList.toggle('visible')
-		}
+	spoilerHeader.addEventListener('click', () => {
+		const spoilerContent = spoilerHeader.closest('.character-description__spoiler').querySelector('.spoiler__content')
+		spoilerContent.classList.toggle('visible')
 	})
-
 })
+
+// search====================
+
+// /search====================
