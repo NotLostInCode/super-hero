@@ -29,5 +29,18 @@ spoilerHeaders.forEach(spoilerHeader => {
 })
 
 // search====================
+	const searchingResults = document.querySelector('.searching__results')
 
+	// create img hero
+	const heroImg = document.createElement('img')
+	heroImg.src = 'https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg'
+	heroImg.classList.add('searching-results__img')
+
+	// create name hero
+	const heroName = document.createElement('p')
+	heroName.textContent = 'Герой'
+	heroName.classList.add('searching-results__name')
+
+	//adding block search results
+	searchingResults.append(heroImg, heroName)
 // /search====================
