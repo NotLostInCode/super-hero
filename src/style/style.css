@@ -182,13 +182,22 @@ textarea {
 .search__input {
 	width: 100%;
 }
-.searching__results {
+.searching-results__shell {
 	display: flex;
 	gap: 20px;
 	align-items: center;
 	cursor: pointer;
 	background-color: rgba(128, 73, 73, 0.733);
+
+	/* display: none; */
 }
+.searching__results {
+
+}
+.show-searching__results {
+	display: block;
+}
+
 .searching-results__img {
 	width: 50px;
 	height: 50px;
