@@ -184,18 +184,26 @@ textarea {
 }
 .searching-results__shell {
 	display: flex;
+	flex-direction: column;
 	gap: 20px;
-	align-items: center;
 	cursor: pointer;
-	background-color: rgba(128, 73, 73, 0.733);
 
-	/* display: none; */
+
+
 }
 .searching__results {
-
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	background-color: rgba(128, 73, 73, 0.733);
 }
-.show-searching__results {
-	display: block;
+
+.hide__results {
+	display: none;
+}
+
+.show__results {
+	display: flex;
 }
 
 .searching-results__img {
