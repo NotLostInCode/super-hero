@@ -7,18 +7,38 @@
 		<title>Super hero</title>
 	</head>
 	<body>
+
 		<header class="header">
+
+			<div class="wrapper run-animation" id="animate">
+
+				<div class="logo">
+
+					<span class="marvel">Marvel</span>
+					<span class="studios">Studios</span>
+
+					<div class="restart">Restart</div>
+				</div>
+			</div>
+
+			<div class="images"></div>
+		</header>
+
+
+
+		<!-- <header class="header">
 			<div class="container">
 				<div class="menu">
+					<div class="header__logo">
+						<img src="./public/images/logo2.png" alt="logo" class="logo" />
+					</div>
 					<nav class="menu__nav">
 						<ul class="menu__list">
 							<li class="menu__item">
 								<a href="/" class="menu__link">Главная</a>
 							</li>
 							<li class="menu__item">
-								<a href="./public/pages/SearchForHeroes.html" class="menu__link">
-									Поиск героев
-								</a>
+								<a href="./public/pages/SearchForHeroes.html" class="menu__link">Поиск героев</a>
 							</li>
 							<li class="menu__item">
 								<a href="#" class="menu__link">Контакты</a>
@@ -26,29 +46,19 @@
 						</ul>
 					</nav>
 				</div>
-			</div>
 
-			<div class="header__animation run-animation" id="animate">
-				<div class="header-animation__logo">
-					<span class="header-animation__site-name">Marvel</span>
-					<span class="header-animation__site-sub">Studios</span>
-					<div class="header-animation__restart">Restart</div>
-					<p class="header-animation__description">
-						Привет! На этом сайте ты сможешь насладится быстрым доступом к
-						информации о героях вселенной Marvel, не отвлекаясь на лишние
-						детали. Просто герои и их силы.
+				<div class="info">
+					<p>Привет! На этом сайте ты сможешь узнать о твоих любимых супергероях. Просто выберити персонажа, и ты получишь его имя, характеристики и невероятные способности. Наслаждайся быстрым доступом к информации о героях вселенной Marvel, не отвлекаясь на лишние детали. Просто герои и их силы.
 					</p>
 				</div>
 			</div>
-			<div class="images"></div>
-		</header>
-
+		</header> -->
 
 		<div class="main">
 			<div class="container">
 				<h1>
-					Просто выбери персонажа, и ты получишь его имя, характеристики и
-					невероятные способности.
+					На этом сайте ты найдешь подробные характеристики персонажей и их
+					способности!
 				</h1>
 
 				<div class="character__information">
@@ -118,24 +128,24 @@
 		</div>
 
 		<div class="footer">
-			<h1>Можешь оставить отзыв, либо что хотелось бы увидеть</h1>
-			<form class="footer__form">
-				<div class="footer__data">
-					<div class="form__name">
+				<h1>Можешь оставить отзыв, либо что хотелось бы увидеть</h1>
+				<form class="footer__form">
+					<div class="footer__data">
+						<div class="form__name">
 						<p>Имя</p>
-						<input type="text" placeholder="Введите имя" />
+						<input type="text" placeholder="Введите имя">
 					</div>
 					<div class="form__email">
 						<p>Почта</p>
-						<input type="email" placeholder="Введите почту" />
+						<input type="email" placeholder="Введите почту">
 					</div>
-				</div>
-				<div class="form__reviews">
-					<p>Отзыв</p>
-					<textarea name="" id=""></textarea>
-				</div>
-				<button>Отправить</button>
-			</form>
+					</div>
+					<div class="form__reviews">
+						<p>Отзыв</p>
+						<textarea name="" id=""></textarea>
+					</div>
+					<button>Отправить</button>
+				</form>
 		</div>
 
 		<script type="module" src="/src/js/main.js"></script>
