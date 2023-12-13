@@ -1,0 +1,87 @@
+@import "reset.css";
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('../public/fonts/LuckiestGuy-Regular.ttf') format('truetype');
+}
+
+
+body {
+  font-family: 'Unbounded', cursive;
+  background-color: rgb(30 30 30);
+  color: #fff;
+  font-size: 25px;
+}
+
+.header {
+  background: url('../../public/images/backgroind-header.jpg');
+
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+}
+.logo {
+}
+.nav__menu {
+
+}
+.menu {
+  display: flex;
+  gap: 40px;
+}
+.menu__list {
+  color: fff;
+  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+
+.menu__list:hover {
+  background-position: 0 100%;
+}
+
+
+/* .menu__list {
+  color: white;
+  background: linear-gradient(90deg, #e933ff, #ffb400, #ff3333, #334dff, #e933ff);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: 0% center;
+  transition: background-position 0.5s ease;
+}
+
+.menu__list:hover {
+  color: transparent;
+  animation: textflow 3s linear infinite;
+}
+
+@keyframes textflow {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+    color: #fff;
+  }
+} */
+
+
+
