@@ -14,19 +14,18 @@ body {
 }
 
 .header {
-  background: url('../../public/images/backgroind-header.jpg');
-
+  height: 100vh;
+  background: url('../../public/images/backgroind-header.jpg') 100% 35% / cover no-repeat;
 }
 
 .container {
-  max-width: 1400px;
+  /* max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 15px; */
 }
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 .header__logo {
