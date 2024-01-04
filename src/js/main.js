@@ -3,7 +3,7 @@ import md5 from 'js-md5'
 
 const spoilerHeaders = document.querySelectorAll('.spoiler__header')
 
-spoilerHeaders.forEach(spoilerHeader => {
+spoilerHeaders.forEach((spoilerHeader) => {
 	spoilerHeader.addEventListener('click', () => {
 		const spoilerContent = spoilerHeader
 			.closest('.character-description__spoiler')
@@ -24,44 +24,52 @@ const privateKey = 'a01ebb5323b7bcfb24739f70ee22f56726f7f0e4'
 const timestamp = new Date().getTime().toString()
 const hash = md5(timestamp + privateKey + publicKey)
 
-const apiUrl = `https://gateway.marvel.com/v1/public/characters?&apikey=${publicKey}&ts=${timestamp}&hash=${hash}`
-// const searchApi = `https://gateway.marvel.com/v1/public/characters?name=${searchInput.value}&apikey=${publicKey}&ts=${timestamp}&hash=${hash}`
-// const apiUrl = `https://gateway.marvel.com/v1/public/characters?name=${searchInput.value}&apikey=${publicKey}&ts=${timestamp}&hash=${hash}`
+const loadHeroes = async (searchHeroes) => {
+	const apiUrl = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchHeroes}&apikey=${publicKey}&ts=${timestamp}&hash=${hash}`
+	try {
+		const response = await fetch(apiUrl)
+		const data = await response.json()
+		displayHeroesList(data.data.results)
+	} catch (error) {
+		console.error('Ошибка при загрузке героев:', error)
+	}
+}
 
-searchInput.addEventListener('input', function () {
-	if (searchInput.value === '') {
-		searchingResultsShell.classList.add('hide__results')
-		searchingResultsShell.classList.remove('show__results')
-	} else {
+const displayHeroesList = (heroes) => {
+	searchingResultsShell.innerHTML = ''
+
+	heroes.forEach((hero) => {
+		// create shell search results
+		const searchingResults = document.createElement('div')
+		searchingResults.classList.add('searching__results')
+
+		// create img hero
+		const heroImg = document.createElement('img')
+		heroImg.classList.add('searching-results__img')
+		heroImg.src = `${hero.thumbnail.path}.${hero.thumbnail.extension}`
+
+		// create name hero
+		const heroName = document.createElement('p')
+		heroName.classList.add('searching-results__name')
+		heroName.textContent = hero.name
+
+		searchingResults.append(heroImg, heroName)
+		searchingResultsShell.append(searchingResults)
+	})
+}
+
+const findHeroes = () => {
+	let searchHeroes = searchInput.value.trim()
+	if (searchHeroes.length > 0) {
 		searchingResultsShell.classList.add('show__results')
 		searchingResultsShell.classList.remove('hide__results')
+		loadHeroes(searchHeroes)
+	} else {
+		searchingResultsShell.classList.add('hide__results')
+		searchingResultsShell.classList.remove('show__results')
 	}
-})
+}
 
-fetch(apiUrl)
-	.then(response => response.json())
-	.then(data => {
-		data.data.results.forEach(hero => {
-			// create shell search results
-			const searchingResults = document.createElement('div')
-			searchingResults.classList.add('searching__results')
-
-			// create img hero
-			const heroImg = document.createElement('img')
-			heroImg.classList.add('searching-results__img')
-			heroImg.src = `${hero.thumbnail.path}.${hero.thumbnail.extension}`
-
-			// create name hero
-			const heroName = document.createElement('p')
-			heroName.classList.add('searching-results__name')
-			heroName.textContent = hero.name
-
-			searchingResults.append(heroImg, heroName)
-			searchingResultsShell.append(searchingResults)
-		})
-	})
-	.catch(e => {
-		console.log(e.message)
-	})
+searchInput.addEventListener('input', findHeroes)
 
 // /search====================
