@@ -1,59 +1,61 @@
-@import "reset.css";
+@import 'reset.css';
 
 @font-face {
-  font-family: 'Unbounded';
-  src: url('../public/fonts/LuckiestGuy-Regular.ttf') format('truetype');
+	font-family: 'Unbounded';
+	src: url('../public/fonts/LuckiestGuy-Regular.ttf') format('truetype');
 }
 
-
 body {
-  font-family: 'Unbounded', cursive;
-  background-color: rgb(30 30 30);
-  color: #fff;
-  font-size: 25px;
+	font-family: 'Unbounded', cursive;
+	background-color: rgb(30 30 30);
+	color: #fff;
+	font-size: 25px;
 }
 
 .header {
-  height: 100vh;
-  background: url('../../public/images/backgroind-header.jpg') 100% 35% / cover no-repeat;
+	height: 100vh;
+	background: url('../../public/images/backgroind-header.jpg') 100% 35% / cover no-repeat;
 }
 
 .container {
-  /* max-width: 1400px;
+	max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px; */
+  padding: 0 15px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
+.menu {
+	display: flex;
+	justify-content: space-between;
+  padding: 10px 0;
 }
 .header__logo {
 }
 .logo {
 }
-.nav__menu {
-
-}
-.menu {
-  display: flex;
-  gap: 40px;
+.menu__nav {
 }
 .menu__list {
-  color: fff;
-  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 100%;
-  background-position: 100%;
-  transition: background-position 275ms ease;
+	display: flex;
+	gap: 40px;
+}
+.menu__item {
+	background: linear-gradient(
+    to right,
+		rgb(138, 29, 29),
+		rgb(173, 49, 49) 50%,
+		rgb(255, 255, 255) 50%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 200% 100%;
+	background-position: 100%;
+	transition: background-position 275ms ease;
 }
 
-.menu__list:hover {
-  background-position: 0 100%;
+.menu__item:hover {
+	background-position: 0 100%;
 }
-
 
 /* .menu__list {
   color: white;
@@ -84,3 +86,46 @@ body {
 
 
 
+/* main */
+.main {
+	background-color: rgb(47, 51, 54);
+}
+.character__information {
+	display: flex;
+
+	gap: 20px;
+}
+.character__image {
+	flex: 0 0 40%;
+}
+.spoiler {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 70%;
+}
+.character-description__spoiler {
+	width: 100%;
+	border: 2px solid #fff;
+	position: relative;
+}
+.spoiler__actions {
+
+}
+
+.spoiler__header {
+	cursor: pointer;
+}
+.spoiler__btn {
+
+}
+
+
+.spoiler__content {
+	display: none;
+
+}
+.visible {
+	display: block;
+
+}
+/* /main */
