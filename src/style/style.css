@@ -52,6 +52,7 @@ body {
 }
 
 .header-animation__logo {
+  width: 715px;
   cursor: pointer;
   text-align: center;
 }
